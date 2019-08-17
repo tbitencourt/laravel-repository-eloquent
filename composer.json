@@ -1,0 +1,33 @@
+{
+    "name"             : "tbitencourt/laravel-repository-eloquent",
+    "description"      : "Easy MVC repository with Eloquent for Laravel 5",
+    "keywords"         : [
+        "repository",
+        "eloquent",
+        "laravel",
+        "php"
+    ],
+    "homepage"         : "https://github.com/tbitencourt/laravel-repository-eloquent",
+    "type"             : "library",
+    "authors"          : [
+        {
+            "name" : "Thales Bitencourt",
+            "email": "thalesbitencourt@gmail.com",
+            "role" : "Developer"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require"          : {
+        "php"              : ">=7.0.0",
+        "laravel/framework": "~5.2.0||~5.3.0||~5.4.0||~5.5.0||~5.6.0||~5.7.0||~5.8.0"
+    },
+    "autoload": {
+        "classmap": [
+            "database"
+        ],
+        "psr-4": {
+            "App\\": "app/",
+            "Tbitencourt\\LaravelRepositoryEloquent\\": "packages/tbitencourt/laravel-repository-eloquent/src"
+        }
+    }
+}
