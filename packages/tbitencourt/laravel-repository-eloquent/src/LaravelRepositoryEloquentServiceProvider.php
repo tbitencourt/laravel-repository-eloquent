@@ -7,10 +7,20 @@ use Illuminate\Support\ServiceProvider;
 /**
  * Class LaravelRepositoryEloquentServiceProvider
  * @package Tbitencourt\LaravelRepositoryEloquent
- * @author Thales Bitencourt
+ * @author  Thales Bitencourt
  */
 class LaravelRepositoryEloquentServiceProvider extends ServiceProvider
 {
+    /**
+     * @var string
+     */
+    private $defaultConfigName = 'repository';
+    /**
+     * Indicates if loading of the provider is deferred.
+     * @var bool
+     */
+    protected $defer = true;
+
     /**
      * Register services.
      * The register() method is used to bind any classes or functionality into the app container
@@ -18,18 +28,47 @@ class LaravelRepositoryEloquentServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        if ($this->isLumen()) {
+            $this->app->configure($this->defaultConfigName);
+        } else {
+            $this->publishes(
+                [
+                    __DIR__ . '/config.php' => config_path($this->defaultConfigName . '.php'),
+                ], 'config'
+            );
+        }
+    }
+
+    /**
+     * Get the services provided by the provider.
+     * @return array
+     */
+    public function provides()
+    {
+        return [$this->defaultConfigName . '.factory'];
     }
 
     /**
      * Bootstrap services.
-     * The boot() method is used to boot any routes, event listeners, or any other functionality you want to add to your package
-     *
+     * The boot() method is used to boot any routes, event listeners, or any other functionality you want to add to
+     * your package
      * @return void
      */
     public function boot()
     {
-        //
-        include __DIR__.'/routes.php';
+        //include __DIR__.'/routes.php';
+        $packageConfigFile = __DIR__ . '/config.php';
+
+        $this->mergeConfigFrom(
+            $packageConfigFile, $this->defaultConfigName
+        );
+    }
+
+    /**
+     * @return bool
+     */
+    private function isLumen()
+    {
+        return true === str_contains($this->app->version(), 'Lumen');
     }
 }
