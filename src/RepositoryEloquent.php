@@ -1,6 +1,6 @@
 <?php
 
-namespace Tbitencourt\LaravelRepositoryEloquent\Eloquent;
+namespace Tbitencourt\LaravelRepositoryEloquent;
 
 use Illuminate\Contracts\Container\BindingResolutionException;
 use Illuminate\Database\Eloquent\Builder;
@@ -10,7 +10,7 @@ use Tbitencourt\LaravelRepositoryEloquent\Exceptions\RepositoryException;
 
 /**
  * Class RepositoryEloquent
- * @package Tbitencourt\LaravelRepositoryEloquent\Eloquent
+ * @package Tbitencourt\LaravelRepositoryEloquent
  * @author  Thales Bitencourt
  */
 abstract class RepositoryEloquent extends Builder implements Repository

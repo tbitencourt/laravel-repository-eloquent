@@ -33,7 +33,7 @@ Register the service provider in `config/app.php`
 ```php
         'providers' => [
 		// [...]
-                Tbitencourt\LaravelRepositoryEloquent\LaravelRepositoryEloquentServiceProvider::class,
+                Tbitencourt\LaravelRepositoryEloquent\Providers\RepositoryEloquentServiceProvider::class,
         ],
 ```
 
@@ -51,7 +51,7 @@ You may also register the `LaravelRepositoryEloquent` facade:
 In order to edit the default configuration (where for e.g. you can find `supportedLocales`) for this package you may execute:
 
 ```
-php artisan vendor:publish --provider="Tbitencourt\LaravelRepositoryEloquent\LaravelRepositoryEloquentServiceProvider"
+php artisan vendor:publish --provider="Tbitencourt\LaravelRepositoryEloquent\Providers\RepositoryEloquentServiceProvider"
 ```
 
 After that, `config/laravelrepositoryeloquent.php` will be created. Inside this file you will find all the fields that can be edited in this package.

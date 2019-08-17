@@ -5,11 +5,11 @@ namespace Tbitencourt\LaravelRepositoryEloquent;
 use Illuminate\Support\ServiceProvider;
 
 /**
- * Class LaravelRepositoryEloquentServiceProvider
+ * Class RepositoryEloquentServiceProvider
  * @package Tbitencourt\LaravelRepositoryEloquent
  * @author  Thales Bitencourt
  */
-class LaravelRepositoryEloquentServiceProvider extends ServiceProvider
+class RepositoryEloquentServiceProvider extends ServiceProvider
 {
     /**
      * @var string
@@ -33,7 +33,7 @@ class LaravelRepositoryEloquentServiceProvider extends ServiceProvider
         } else {
             $this->publishes(
                 [
-                    __DIR__ . '/config.php' => config_path($this->defaultConfigName . '.php'),
+                    __DIR__ . '/../config/config.php' => config_path($this->defaultConfigName . '.php'),
                 ], 'config'
             );
         }
@@ -56,9 +56,7 @@ class LaravelRepositoryEloquentServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //include __DIR__.'/routes.php';
-        $packageConfigFile = __DIR__ . '/config.php';
-
+        $packageConfigFile = __DIR__ . '/../config/config.php';
         $this->mergeConfigFrom(
             $packageConfigFile, $this->defaultConfigName
         );

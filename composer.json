@@ -1,6 +1,7 @@
 {
     "name"             : "tbitencourt/laravel-repository-eloquent",
     "description"      : "Easy MVC repository with Eloquent for Laravel 5",
+    "version"          : "1.0.0",
     "keywords"         : [
         "repository",
         "eloquent",
@@ -26,8 +27,8 @@
         "classmap": [
         ],
         "psr-4": {
-            "App\\": "app/",
-            "Tbitencourt\\LaravelRepositoryEloquent\\": "packages/tbitencourt/laravel-repository-eloquent/src"
+            "App\\"                                   : "app/",
+            "Tbitencourt\\LaravelRepositoryEloquent\\": "src"
         }
     }
 }
