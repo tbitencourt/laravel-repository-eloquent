@@ -7,9 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### [Unreleased]
 #### Added
-- Nothing to report yet.
-  See [#]().
-
+- Nothing to report.
+  
 #### Fixed
 - Nothing to report.
 
@@ -24,3 +23,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 #### Security
 - Nothing to report.
+
+### [1.0.0] - 2019-09-18
+#### Added
+- Default configuration file generate by publish artisan command.
+  See [#951a844](https://github.com/tbitencourt/laravel-repository-eloquent/commit/951a8445b018ef54b46b34f4bb316e840e92971c).
+- First version of RepositoryEloquent abstract class using Illuminate\Database\Eloquent\Builder as base.
+  See [#ff330aa](https://github.com/tbitencourt/laravel-repository-eloquent/commit/ff330aac6f189ae7cacd27d748f3409209bbf8c7).
