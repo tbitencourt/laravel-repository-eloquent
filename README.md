@@ -1,5 +1,10 @@
 # Laravel Repository Eloquent
 
+[![Latest Stable Version](https://poser.pugx.org/tbitencourt/laravel-repository-eloquent/v/stable)](https://packagist.org/packages/tbitencourt/laravel-repository-eloquent)
+[![Total Downloads](https://poser.pugx.org/tbitencourt/laravel-repository-eloquent/downloads)](https://packagist.org/packages/tbitencourt/laravel-repository-eloquent)
+[![Build Status](https://travis-ci.org/tbitencourt/laravel-repository-eloquent.png)](https://travis-ci.org/tbitencourt/laravel-repository-eloquent)
+[![License](https://poser.pugx.org/tbitencourt/laravel-repository-eloquent/license)](https://packagist.org/packages/tbitencourt/laravel-repository-eloquent)
+
 Easy MVC repository with Eloquent for Laravel 5, an useful tool to combine with Laravel Eloquent classes.
 
 ## Table of Contents
