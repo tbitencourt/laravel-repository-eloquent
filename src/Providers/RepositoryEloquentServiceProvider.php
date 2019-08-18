@@ -33,7 +33,7 @@ class RepositoryEloquentServiceProvider extends ServiceProvider
         } else {
             $this->publishes(
                 [
-                    __DIR__ . '/../config/config.php' => config_path($this->defaultConfigName . '.php'),
+                    __DIR__ . '/../../config/config.php' => config_path($this->defaultConfigName . '.php'),
                 ], 'config'
             );
         }
@@ -56,7 +56,7 @@ class RepositoryEloquentServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $packageConfigFile = __DIR__ . '/../config/config.php';
+        $packageConfigFile = __DIR__ . '/../../config/config.php';
         $this->mergeConfigFrom(
             $packageConfigFile, $this->defaultConfigName
         );
