@@ -1,6 +1,6 @@
 <?php
 
-namespace Tbitencourt\LaravelRepositoryEloquent;
+namespace Tbitencourt\LaravelRepositoryEloquent\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
