@@ -43,15 +43,6 @@ Register the service provider in `config/app.php`
         ],
 ```
 
-You may also register the `LaravelRepositoryEloquent` facade:
-
-```php
-        'aliases' => [
-		// [...]
-                'LaravelRepositoryEloquent' => Tbitencourt\LaravelRepositoryEloquent\Facades\LaravelRepositoryEloquent::class,
-        ],
-```
-
 ## Config
 
 In order to edit the default configuration (where for e.g. you can find `supportedLocales`) for this package you may execute:
