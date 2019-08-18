@@ -14,6 +14,7 @@ Easy MVC repository with Eloquent for Laravel 5, an useful tool to combine with 
     - <a href="#composer">Composer</a>
     - <a href="#manually">Manually</a>
 - <a href="#config">Config</a>
+- <a href="#usage">Usage</a>
 - <a href="#changelog">Changelog</a>
 - <a href="#license">License</a>
 
@@ -61,6 +62,48 @@ php artisan vendor:publish --provider="Tbitencourt\LaravelRepositoryEloquent\Pro
 
 After that, `config/laravelrepositoryeloquent.php` will be created. Inside this file you will find all the fields that can be edited in this package.
 
+## Usage
+
+The first step is to store your repositories somewhere - anywhere. These will be simple declaration to start using it.
+
+Here's an example of a repository.
+
+```php
+use Tbitencourt\LaravelRepositoryEloquent\RepositoryEloquent;
+
+class UserRepository extends RepositoryEloquent {
+
+    /**
+     * Specify \Illuminate\Database\Eloquent\Model class name
+     * @return string
+     */
+    public function model()
+    {
+        return User::class;
+    }
+}
+```
+
+That's it! You're done. Now, within your controller and services, you can do:
+
+```php
+    protected $repository;
+    
+    public __construct(UserRepository $repository)
+    {
+        $this->repository = $repository;
+    }
+    
+    public index(Request $request)
+    {
+        $result = $this->repository->get();
+        
+        return view('myView');
+    }
+```
+
+Notice how the call to the `repository` methods are equal to Eloquent so you doesn't need to learn new commands and proper use MVC repository.
+
 ## Changelog
 
 View changelog here -> [changelog](CHANGELOG.md)
@@ -68,3 +111,8 @@ View changelog here -> [changelog](CHANGELOG.md)
 ## License
 
 Laravel Localization is an open-sourced laravel package licensed under the MIT license
+
+
+Have fun!
+
+Thales
