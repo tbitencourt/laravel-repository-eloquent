@@ -70,7 +70,7 @@ abstract class RepositoryEloquent extends Builder implements Repository
      * @param array $where
      * @return $this
      */
-    protected function customWhere($where)
+    public function customWhere($where)
     {
         $relationWhere = $this->extractOnlyRelationWhere($where);
         $this->buildRelationsQuery($relationWhere, $where);
