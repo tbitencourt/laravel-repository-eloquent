@@ -32,3 +32,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   See [#ff330aa](https://github.com/tbitencourt/laravel-repository-eloquent/commit/ff330aac6f189ae7cacd27d748f3409209bbf8c7).
 - MIT License.
   See [#12c1d48](https://github.com/tbitencourt/laravel-repository-eloquent/commit/12c1d48ed736a5e830778530d9e6a408b6397550).
+- Add function "customWhere" on RepositoryEloquent, to filter using a array with "where" parameters.
+  See [#c1a2f8d](https://github.com/tbitencourt/laravel-repository-eloquent/commit/c1a2f8d3dcf729acdaf92a94440a4f2a9f4efd0e).
