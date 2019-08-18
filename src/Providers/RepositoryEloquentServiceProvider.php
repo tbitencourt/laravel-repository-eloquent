@@ -12,10 +12,6 @@ use Illuminate\Support\ServiceProvider;
 class RepositoryEloquentServiceProvider extends ServiceProvider
 {
     /**
-     * @var string
-     */
-    private $defaultConfigName = 'repository';
-    /**
      * Indicates if loading of the provider is deferred.
      * @var bool
      */
@@ -29,11 +25,11 @@ class RepositoryEloquentServiceProvider extends ServiceProvider
     public function register()
     {
         if ($this->isLumen()) {
-            $this->app->configure($this->defaultConfigName);
+            $this->app->configure('repository');
         } else {
             $this->publishes(
                 [
-                    __DIR__ . '/../../config/config.php' => config_path($this->defaultConfigName . '.php'),
+                    __DIR__ . '/../../config/config.php' => config_path('repository.php'),
                 ], 'config'
             );
         }
@@ -45,7 +41,7 @@ class RepositoryEloquentServiceProvider extends ServiceProvider
      */
     public function provides()
     {
-        return [$this->defaultConfigName . '.factory'];
+        return ['repository.factory'];
     }
 
     /**
@@ -58,7 +54,7 @@ class RepositoryEloquentServiceProvider extends ServiceProvider
     {
         $packageConfigFile = __DIR__ . '/../../config/config.php';
         $this->mergeConfigFrom(
-            $packageConfigFile, $this->defaultConfigName
+            $packageConfigFile, 'repository'
         );
     }
 
