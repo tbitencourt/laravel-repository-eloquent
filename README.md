@@ -51,7 +51,7 @@ In order to edit the default configuration (where for e.g. you can find `support
 php artisan vendor:publish --provider="Tbitencourt\LaravelRepositoryEloquent\Providers\RepositoryEloquentServiceProvider"
 ```
 
-After that, `config/laravelrepositoryeloquent.php` will be created. Inside this file you will find all the fields that can be edited in this package.
+After that, `config/repository.php` will be created. Inside this file you will find all the fields that can be edited in this package.
 
 ## Usage
 
