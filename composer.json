@@ -1,7 +1,7 @@
 {
     "name"             : "tbitencourt/laravel-repository-eloquent",
     "description"      : "Easy MVC repository with Eloquent for Laravel 5",
-    "version"          : "1.0.0",
+    "version"          : "1.1.0",
     "keywords"         : [
         "repository",
         "eloquent",
@@ -20,7 +20,7 @@
     ],
     "require"          : {
         "php"              : ">=7.0.0",
-        "laravel/framework": "~5.2.0||~5.3.0||~5.4.0||~5.5.0||~5.6.0||~5.7.0||~5.8.0"
+        "laravel/framework": "~5.2.0||~5.3.0||~5.4.0||~5.5.0||~5.6.0||~5.7.0||~5.8.0||~6.0.0"
     },
     "autoload"         : {
         "classmap": [
