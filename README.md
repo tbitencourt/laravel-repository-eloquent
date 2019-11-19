@@ -25,6 +25,7 @@ Easy MVC repository with Eloquent for Laravel 5, an useful tool to combine with 
  Laravel      | laravel-repository-eloquent
 :-------------|:----------
  5.2.x-5.8.x (PHP 7 required) | 1.0.x
+ 5.2.x-6.0.x (PHP 7 required) | 1.1.x
 
 ### Composer
 
