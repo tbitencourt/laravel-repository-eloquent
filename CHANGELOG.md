@@ -46,3 +46,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   See [#055a094](https://github.com/tbitencourt/laravel-repository-eloquent/commit/055a0941f35cd9a3b1ff79e5351d33ed1e5eba06).
 - The "customWhere" function on RepositoryEloquent wasn't accepting more then one relation's filter. It has been fixed.
   See [#78f63a5](https://github.com/tbitencourt/laravel-repository-eloquent/commit/78f63a55f4d87c12579afdd7f631cd14c48cc016).
+
+### [1.1.1] - 2019-11-18
+#### Fixed
+- Changed "tilde version range" to "caret version range" to accept all laravel 6.0 versions.
+  See [#9950e0f](https://github.com/tbitencourt/laravel-repository-eloquent/commit/9950e0f53fb5070985615bd1bfd854e2e0d1830d).
