@@ -51,3 +51,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 #### Fixed
 - Changed "tilde version range" to "caret version range" to accept all laravel 6.0 versions.
   See [#9950e0f](https://github.com/tbitencourt/laravel-repository-eloquent/commit/9950e0f53fb5070985615bd1bfd854e2e0d1830d).
+
+### [1.1.2] - 2019-11-18
+#### Fixed
+- Changed "str_contains" helper to "Str::contains" to accept laravel 6.0 versions.
+  See [#2e30dd9](https://github.com/tbitencourt/laravel-repository-eloquent/commit/2e30dd982d7dab3d05cc7e6335fd184d3f67386c).
