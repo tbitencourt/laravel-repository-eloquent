@@ -3,6 +3,7 @@
 namespace Tbitencourt\LaravelRepositoryEloquent\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Str;
 
 /**
  * Class RepositoryEloquentServiceProvider
@@ -63,6 +64,6 @@ class RepositoryEloquentServiceProvider extends ServiceProvider
      */
     private function isLumen()
     {
-        return true === str_contains($this->app->version(), 'Lumen');
+        return true === Str::contains($this->app->version(), 'Lumen');
     }
 }
