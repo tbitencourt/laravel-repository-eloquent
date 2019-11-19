@@ -94,15 +94,14 @@ abstract class RepositoryEloquent extends Builder implements Repository
                     Arr::set($fixWhere, $key, $newKey);
                     $key = $newKey;
                 }
-                $arrayField               = explode('.', $key);
-                $field                    = array_pop($arrayField);
-                $relation                 = implode(".", $arrayField);
-                $relationWhere[$relation] = [$field => $value];
-                //                Arr::set($relationWhere, $key, $value);
+                $arrayField                       = explode('.', $key);
+                $field                            = array_pop($arrayField);
+                $relation                         = implode(".", $arrayField);
+                $relationWhere[$relation][$field] = $value;
             }
         }, array_keys($where), $where);
         //Change "->" character to "."
-        array_map(function($originalKey, $newKey) use (&$where, &$teste) {
+        array_map(function($originalKey, $newKey) use (&$where) {
             $value = $where[$originalKey];
             unset($where[$originalKey]);
             $where[$newKey] = $value;
