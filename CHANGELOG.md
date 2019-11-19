@@ -39,6 +39,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 #### Added
 - Added laravel framework 6.0 (or later).
   See [#29b810f](https://github.com/tbitencourt/laravel-repository-eloquent/commit/29b810fadd3a1b59372080dc346ba68c8736f509).
+  See [#992ec66](https://github.com/tbitencourt/laravel-repository-eloquent/commit/992ec66b4c78864e7bf73b345440cb6b8101a6ea).
 
 #### Fixed
 - Config filename fixed.
