@@ -61,3 +61,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 #### Added
 - Added laravel framework 7.0 (or later).
   See [#41b19ca](https://github.com/tbitencourt/laravel-repository-eloquent/commit/41b19ca79f50fb2973656e1f618f4dc131081910).
+
+### [1.2.1] - 2020-04-17
+#### Removed
+- Temporarily removed PHP 7.2.x support.
+  See [#0a362ea](https://github.com/tbitencourt/laravel-repository-eloquent/commit/0a362ea9fcb07eb40d7fb0b2278fccc6c26a0c13).

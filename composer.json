@@ -1,7 +1,7 @@
 {
     "name"       : "tbitencourt/laravel-repository-eloquent",
     "description": "Easy MVC repository with Eloquent for Laravel 5 or later",
-    "version"    : "1.2.0",
+    "version"    : "1.2.1",
     "keywords"   : [
         "repository",
         "eloquent",
