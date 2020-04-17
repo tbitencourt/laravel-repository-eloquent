@@ -5,7 +5,7 @@
 [![Build Status](https://travis-ci.org/tbitencourt/laravel-repository-eloquent.png)](https://travis-ci.org/tbitencourt/laravel-repository-eloquent)
 [![License](https://poser.pugx.org/tbitencourt/laravel-repository-eloquent/license)](https://packagist.org/packages/tbitencourt/laravel-repository-eloquent)
 
-Easy MVC repository with Eloquent for Laravel 5, an useful tool to combine with Laravel Eloquent classes.
+Easy MVC repository with Eloquent for Laravel 5 or later, an useful tool to combine with Laravel Eloquent classes.
 
 ## Table of Contents
 
@@ -26,6 +26,7 @@ Easy MVC repository with Eloquent for Laravel 5, an useful tool to combine with 
 :-------------|:----------
  5.2.x-5.8.x (PHP 7 required) | 1.0.x
  5.2.x-6.0.x (PHP 7 required) | 1.1.x
+ 5.2.x-7.0.x (PHP 7 required) | 1.2.x
 
 ### Composer
 
@@ -33,7 +34,7 @@ Install the package via composer: `composer require tbitencourt/laravel-reposito
 
 ### Manually
 
-In Laravel 5.5, the service provider and facade will automatically get registered. For older versions of the framework, follow the steps below:
+Since Laravel 5.5, the service provider and facade will automatically get registered. For older versions of the framework, follow the steps below:
 
 Register the service provider in `config/app.php`
 
