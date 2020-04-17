@@ -1,4 +1,15 @@
 <?php
+declare(strict_types=1);
+/*
+ * PHP version 7.4
+ *
+ * @category PHP
+ * @package  LaravelRepositoryEloquent
+ * @author   Thales Bitencourt <thales.bitencourt@devthreads.com.br>
+ * @author   DevThreads Team <contato@devthreads.com.br>
+ * @license  https://www.devthreads.com.br  Copyright
+ * @link     https://www.devthreads.com.br
+ */
 
 namespace Tbitencourt\LaravelRepositoryEloquent\Exceptions;
 
@@ -7,8 +18,12 @@ use Throwable;
 
 /**
  * Class RepositoryException
- * @package Tbitencourt\LaravelRepositoryEloquent\Exceptions
- * @author  Thales Bitencourt
+ * @category PHP
+ * @package  Tbitencourt\LaravelRepositoryEloquent\Exceptions
+ * @author   Thales Bitencourt <thales.bitencourt@devthreads.com.br>
+ * @author   DevThreads Team <contato@devthreads.com.br>
+ * @license  https://www.devthreads.com.br  Copyright
+ * @link     https://www.devthreads.com.br
  */
 class RepositoryException extends Exception
 {
