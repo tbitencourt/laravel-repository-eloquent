@@ -28,6 +28,15 @@ Easy MVC repository with Eloquent for Laravel 5 or later, an useful tool to comb
  5.2.x-6.0.x (PHP 7 required) | 1.1.x
  5.2.x-7.0.x (PHP 7 required) | 1.2.x
 
+
+### PHP 7 compatibility
+
+ PHP      | laravel-repository-eloquent
+:-------------|:----------
+ 7.0.x-7.3.x | 1.0.x
+ 7.0.x-7.4.x | 1.1.x
+ 7.0.x-7.4.x (Except 7.2.x) | 1.2.x
+
 ### Composer
 
 Install the package via composer: `composer require tbitencourt/laravel-repository-eloquent`
