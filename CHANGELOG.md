@@ -57,7 +57,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Changed "str_contains" helper to "Str::contains" to accept laravel 6.0 versions.
   See [#2e30dd9](https://github.com/tbitencourt/laravel-repository-eloquent/commit/2e30dd982d7dab3d05cc7e6335fd184d3f67386c).
 
-### [1.2.0] - 2019-11-18
+### [1.2.0] - 2020-04-16
 #### Added
 - Added laravel framework 7.0 (or later).
   See [#41b19ca](https://github.com/tbitencourt/laravel-repository-eloquent/commit/41b19ca79f50fb2973656e1f618f4dc131081910).
