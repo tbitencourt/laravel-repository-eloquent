@@ -3,9 +3,10 @@
  * 
  * @category PHP
 #if (${NAMESPACE}) * @package  ${NAMESPACE}
-#else * @package  OMeuRestaurante-Api
+#else * @package  LaravelRepositoryEloquent
 #end
- * @author   O Meu Restaurante Dev Team <contato@omeurestaurante.com.br>
- * @license  https://www.omeurestaurante.com.br  Copyright
- * @link     https://www.omeurestaurante.com.br
+ * @author   Thales Bitencourt <thales.bitencourt@devthreads.com.br>
+ * @author   DevThreads Team <contato@devthreads.com.br>
+ * @license  https://www.devthreads.com.br  Copyright
+ * @link     https://www.devthreads.com.br
  */

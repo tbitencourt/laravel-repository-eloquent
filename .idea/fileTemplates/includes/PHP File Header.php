@@ -6,8 +6,9 @@ declare(strict_types=1);
  * PHP version 7.4
  *
  * @category PHP
- * @package  OMeuRestaurante-Api
- * @author   O Meu Restaurante Dev Team <contato@omeurestaurante.com.br>
- * @license  https://www.omeurestaurante.com.br  Copyright
- * @link     https://www.omeurestaurante.com.br
+ * @package  LaravelRepositoryEloquent
+ * @author   Thales Bitencourt <thales.bitencourt@devthreads.com.br>
+ * @author   DevThreads Team <contato@devthreads.com.br>
+ * @license  https://www.devthreads.com.br  Copyright
+ * @link     https://www.devthreads.com.br
  */
