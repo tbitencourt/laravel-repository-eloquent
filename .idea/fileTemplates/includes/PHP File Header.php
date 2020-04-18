@@ -1,4 +1,4 @@
-declare(strict_types=1);
+
 /*
 #if (!${NAME}) * File ${FILE_NAME}
  *
@@ -12,3 +12,5 @@ declare(strict_types=1);
  * @license  https://www.devthreads.com.br  Copyright
  * @link     https://www.devthreads.com.br
  */
+ 
+declare(strict_types=1);

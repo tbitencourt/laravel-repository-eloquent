@@ -1,8 +1,7 @@
 <?php
-declare(strict_types=1);
-/*
+
+/**
  * PHP version 7.4
- *
  * @category PHP
  * @package  LaravelRepositoryEloquent
  * @author   Thales Bitencourt <thales.bitencourt@devthreads.com.br>
@@ -10,6 +9,8 @@ declare(strict_types=1);
  * @license  https://www.devthreads.com.br  Copyright
  * @link     https://www.devthreads.com.br
  */
+
+declare(strict_types=1);
 
 namespace Tbitencourt\LaravelRepositoryEloquent\Exceptions;
 

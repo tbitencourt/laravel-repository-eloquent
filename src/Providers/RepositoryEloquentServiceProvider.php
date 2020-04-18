@@ -1,5 +1,17 @@
 <?php
 
+/**
+ * PHP version 7.4
+ * @category PHP
+ * @package  LaravelRepositoryEloquent
+ * @author   Thales Bitencourt <thales.bitencourt@devthreads.com.br>
+ * @author   DevThreads Team <contato@devthreads.com.br>
+ * @license  https://www.devthreads.com.br  Copyright
+ * @link     https://www.devthreads.com.br
+ */
+
+declare(strict_types=1);
+
 namespace Tbitencourt\LaravelRepositoryEloquent\Providers;
 
 use Illuminate\Support\ServiceProvider;
@@ -14,7 +26,7 @@ class RepositoryEloquentServiceProvider extends ServiceProvider
 {
     /**
      * Indicates if loading of the provider is deferred.
-     * @var bool
+     * @var boolean
      */
     protected $defer = true;
 
@@ -26,14 +38,18 @@ class RepositoryEloquentServiceProvider extends ServiceProvider
     public function register()
     {
         if ($this->isLumen()) {
+            /** @noinspection PhpUndefinedMethodInspection */
             $this->app->configure('repository');
-        } else {
-            $this->publishes(
-                [
-                    __DIR__ . '/../config.php' => config_path('repository.php'),
-                ], 'config'
-            );
+
+            return;
         }
+
+        $this->publishes(
+            [
+                __DIR__ . '/../config.php' => config_path('repository.php'),
+            ],
+            'config'
+        );
     }
 
     /**
@@ -55,7 +71,8 @@ class RepositoryEloquentServiceProvider extends ServiceProvider
     {
         $packageConfigFile = __DIR__ . '/../config.php';
         $this->mergeConfigFrom(
-            $packageConfigFile, 'repository'
+            $packageConfigFile,
+            'repository'
         );
     }
 

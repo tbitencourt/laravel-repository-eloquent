@@ -52,7 +52,7 @@ jobs:
         run: php vendor/bin/phpcpd src/
 
       - name: Mess Detector
-        run: find -L "src/" -name '*.php' -print0 | xargs -0 -n 1 -P 4 -I{} php vendor/bin/phpmd {} text cleancode, codesize, controversial, design, naming, unusedcode
+        run: find -L "src/" -name '*.php' -print0 | xargs -0 -n 1 -P 4 -I{} php vendor/bin/phpmd {} text phpmd.xml
 
       - name: Code Sniffer
         run: |

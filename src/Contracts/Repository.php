@@ -1,11 +1,27 @@
 <?php
 
+/**
+ * PHP version 7.4
+ * @category PHP
+ * @package  LaravelRepositoryEloquent
+ * @author   Thales Bitencourt <thales.bitencourt@devthreads.com.br>
+ * @author   DevThreads Team <contato@devthreads.com.br>
+ * @license  https://www.devthreads.com.br  Copyright
+ * @link     https://www.devthreads.com.br
+ */
+
+declare(strict_types=1);
+
 namespace Tbitencourt\LaravelRepositoryEloquent\Contracts;
 
 /**
  * Interface Repository
- * @package Tbitencourt\LaravelRepositoryEloquent\Contracts
- * @author  Thales Bitencourt
+ * @category PHP
+ * @package  Tbitencourt\LaravelRepositoryEloquent\Contracts
+ * @author   Thales Bitencourt <thales.bitencourt@devthreads.com.br>
+ * @author   DevThreads Team <contato@devthreads.com.br>
+ * @license  https://www.devthreads.com.br  Copyright
+ * @link     https://www.devthreads.com.br
  */
 interface Repository
 {
