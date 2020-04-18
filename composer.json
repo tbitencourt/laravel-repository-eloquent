@@ -26,11 +26,10 @@
         "classmap": [
         ],
         "psr-4"   : {
-            "App\\"                                   : "app/",
             "Tbitencourt\\LaravelRepositoryEloquent\\": "src"
         }
     },
-    "extra"            : {
+    "extra": {
         "laravel": {
             "providers": [
                 "Tbitencourt\\LaravelRepositoryEloquent\\Providers\\RepositoryEloquentServiceProvider"
@@ -38,5 +37,11 @@
         }
     },
     "minimum-stability": "dev",
-    "prefer-stable"    : true
+    "prefer-stable": true,
+    "require-dev": {
+        "sebastian/phpcpd"         : "^5.0",
+        "phpmd/phpmd"              : "^2.8",
+        "squizlabs/php_codesniffer": "^3.5",
+        "phpunit/phpunit"          : "^9.1"
+    }
 }

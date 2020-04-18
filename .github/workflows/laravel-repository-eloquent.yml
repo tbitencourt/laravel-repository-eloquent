@@ -29,8 +29,6 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-        with:
-          fetch-depth: 2
 
       - name: Cache dependencies
         uses: actions/cache@v1
@@ -44,30 +42,22 @@ jobs:
       - name: Install Dependencies
         run: composer install -q --no-ansi --no-interaction --no-scripts --no-suggest --no-progress --prefer-dist
 
-      - name: Git Fetch
-        run: |
-          git fetch --no-tags --prune --depth=1 origin +refs/heads/*:refs/remotes/origin/*
-      #    git checkout dev
-      #    git switch -
-      #    git rev-parse --verify origin/dev
-      #    #git merge-base HEAD origin/dev
+      - name: PHP Version
+        run: php --version
 
       - name: Lint
-        run: bash .dev/health/lint.sh
+        run: find -L "src/" -name '*.php' -print0 | xargs -0 -n 1 -P 4 php -l
 
       - name: Copy/Paste Detector
-        run: bash .dev/health/phpcpd.sh
+        run: php vendor/bin/phpcpd src/
 
       - name: Mess Detector
-        run: bash .dev/health/phpmd.sh
+        run: find -L "src/" -name '*.php' -print0 | xargs -0 -n 1 -P 4 -I{} php vendor/bin/phpmd {} text cleancode, codesize, controversial, design, naming, unusedcode
 
       - name: Code Sniffer
-        run: bash .dev/health/phpcs.sh
-
-      - name: Execute tests (Unit and Feature tests) via PHPUnit
-        env:
-          DB_CONNECTION: sqlite
-          DB_DATABASE: database/database.sqlite
         run: |
-        echo test
-#        bash .dev/health/unit-tests.sh
+          php vendor/bin/phpcbf src/
+          php vendor/bin/phpcs src/
+
+      - name: PHPUnit
+        run: vendor/bin/phpunit  --no-coverage --debug
