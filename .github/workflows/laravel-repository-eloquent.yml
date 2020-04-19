@@ -12,15 +12,16 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
+        php-versions: ['5.6', '7.0', '7.1', '7.2', '7.3', '7.4']
         php: [
-          #          7.0.*,
-          #          7.1.*,
-          #          7.3.*,
-          7.4.*
+          '7.0',
+          '7.1',
+          '7.3',
+          '7.4'
         ]
         laravel: [
           #          6.*,
-          7.*
+          '7.*'
         ]
         dependency-version: [prefer-stable]
 
@@ -29,6 +30,15 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          extensions: mbstring, intl
+          ini-values: post_max_size=256M, short_open_tag=On
+          coverage: xdebug
+          tools: php-cs-fixer, phpunit
 
       - name: Cache dependencies
         uses: actions/cache@v1
