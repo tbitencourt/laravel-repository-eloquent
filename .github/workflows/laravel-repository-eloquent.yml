@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     strategy:
-      fail-fast: true
+#      fail-fast: true
       matrix:
         php: [
           '7.0',
@@ -34,10 +34,11 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: ${{ matrix.php }}
-          extensions: mbstring, intl
-          ini-values: post_max_size=256M, short_open_tag=On
-          coverage: xdebug
-          tools: php-cs-fixer, phpunit
+          #          extensions: mbstring, intl
+          #          ini-values: post_max_size=256M, short_open_tag=On
+          #          coverage: xdebug
+          #          tools: php-cs-fixer, phpunit
+          tools: pecl
 
       - name: Check PHP Version
         run: php --version
