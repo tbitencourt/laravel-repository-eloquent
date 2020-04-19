@@ -10,12 +10,12 @@ jobs:
     runs-on: ubuntu-latest
 
     strategy:
-#      fail-fast: true
+      fail-fast: false
       matrix:
         php: [
-          '7.0',
-          '7.1',
-          '7.3',
+          #          '7.0',
+          #          '7.1',
+          #          '7.3',
           '7.4'
         ]
         laravel: [
@@ -39,9 +39,6 @@ jobs:
           #          coverage: xdebug
           #          tools: php-cs-fixer, phpunit
           tools: pecl
-
-      - name: Check PHP Version
-        run: php --version
 
       - name: Cache dependencies
         uses: actions/cache@v1
