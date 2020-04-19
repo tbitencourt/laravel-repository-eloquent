@@ -39,6 +39,9 @@ jobs:
           coverage: xdebug
           tools: php-cs-fixer, phpunit
 
+      - name: Check PHP Version
+        run: php --version
+
       - name: Cache dependencies
         uses: actions/cache@v1
         with:
@@ -50,9 +53,6 @@ jobs:
 
       - name: Install Dependencies
         run: composer install -q --no-ansi --no-interaction --no-scripts --no-suggest --no-progress --prefer-dist
-
-      - name: PHP Version
-        run: php --version
 
       - name: Lint
         run: find -L "src/" -name '*.php' -print0 | xargs -0 -n 1 -P 4 php -l
