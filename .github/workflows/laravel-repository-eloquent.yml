@@ -67,4 +67,4 @@ jobs:
           php vendor/bin/phpcs src/
 
       - name: PHPUnit
-        run: vendor/bin/phpunit  --no-coverage --debug
+        run: vendor/bin/phpunit --no-coverage --debug
