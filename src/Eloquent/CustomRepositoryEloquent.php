@@ -1,7 +1,6 @@
 <?php
-
 /**
- * PHP version 7
+ * PHP version 7.4
  * @category PHP
  * @package  LaravelRepositoryEloquent
  * @author   Thales Bitencourt <thales.bitencourt@devthreads.com.br>
@@ -12,31 +11,27 @@
 
 declare(strict_types=1);
 
-namespace Tbitencourt\LaravelRepositoryEloquent\Exceptions;
+namespace Tbitencourt\LaravelRepositoryEloquent\Eloquent;
 
-use Exception;
-use Throwable;
+use Tbitencourt\LaravelRepositoryEloquent\RepositoryEloquent;
 
 /**
- * Class RepositoryException
+ * Class CustomRepositoryEloquent
  * @category PHP
- * @package  Tbitencourt\LaravelRepositoryEloquent\Exceptions
+ * @package  Tbitencourt\LaravelRepositoryEloquent\Eloquent
  * @author   Thales Bitencourt <thales.bitencourt@devthreads.com.br>
  * @author   DevThreads Team <contato@devthreads.com.br>
  * @license  https://www.devthreads.com.br  Copyright
  * @link     https://www.devthreads.com.br
  */
-class RepositoryException extends Exception
+class CustomRepositoryEloquent extends RepositoryEloquent
 {
     /**
-     * RepositoryException constructor.
-     * @param mixed $message
-     * @param mixed $code
-     * @param Throwable|null $previous
+     * Specify \Illuminate\Database\Eloquent\Model class name
+     * @return string
      */
-    public function __construct($message = "", $code = '0', Throwable $previous = null)
+    public function model()
     {
-        // Invoke parent
-        parent::__construct($message, $code, $previous);
+        return get_class($this->model);
     }
 }

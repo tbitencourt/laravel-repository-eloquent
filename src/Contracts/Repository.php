@@ -1,7 +1,7 @@
 <?php
 
 /**
- * PHP version 7.4
+ * PHP version 7
  * @category PHP
  * @package  LaravelRepositoryEloquent
  * @author   Thales Bitencourt <thales.bitencourt@devthreads.com.br>

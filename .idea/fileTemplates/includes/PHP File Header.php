@@ -1,5 +1,5 @@
 
-/*
+/**
 #if (!${NAME}) * File ${FILE_NAME}
  *
 #end
