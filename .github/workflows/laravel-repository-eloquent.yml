@@ -19,8 +19,8 @@ jobs:
           '7.4'
         ]
         laravel: [
-          #          6.*,
-          '7.*'
+          '6.*',
+          #          '7.*'
         ]
         dependency-version: [prefer-stable]
 

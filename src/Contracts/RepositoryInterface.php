@@ -15,7 +15,7 @@ declare(strict_types=1);
 namespace Tbitencourt\LaravelRepositoryEloquent\Contracts;
 
 /**
- * Interface Repository
+ * Interface RepositoryInterface
  * @category PHP
  * @package  Tbitencourt\LaravelRepositoryEloquent\Contracts
  * @author   Thales Bitencourt <thales.bitencourt@devthreads.com.br>
@@ -23,7 +23,7 @@ namespace Tbitencourt\LaravelRepositoryEloquent\Contracts;
  * @license  https://www.devthreads.com.br  Copyright
  * @link     https://www.devthreads.com.br
  */
-interface Repository
+interface RepositoryInterface
 {
     /**
      * Find a model by its primary key.

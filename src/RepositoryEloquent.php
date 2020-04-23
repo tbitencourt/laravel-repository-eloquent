@@ -23,7 +23,7 @@ use Illuminate\Database\Eloquent\Scope;
 use Illuminate\Support\Str;
 use Illuminate\Support\Traits\ForwardsCalls;
 use Tbitencourt\LaravelRepositoryEloquent\Config\RepositoryConfig;
-use Tbitencourt\LaravelRepositoryEloquent\Contracts\Repository;
+use Tbitencourt\LaravelRepositoryEloquent\Contracts\RepositoryInterface;
 use Tbitencourt\LaravelRepositoryEloquent\Eloquent\CustomRepositoryEloquent;
 use Tbitencourt\LaravelRepositoryEloquent\Exceptions\RepositoryException;
 
@@ -36,7 +36,7 @@ use Tbitencourt\LaravelRepositoryEloquent\Exceptions\RepositoryException;
  * @license  https://www.devthreads.com.br  Copyright
  * @link     https://www.devthreads.com.br
  */
-abstract class RepositoryEloquent implements Repository
+abstract class RepositoryEloquent implements RepositoryInterface
 {
     use ForwardsCalls;
     use HasGlobalScopes;
