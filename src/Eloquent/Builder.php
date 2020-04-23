@@ -46,14 +46,16 @@ class Builder extends BaseBuilder
      * @param string $boolean
      * @return $this
      * @throws Exception
+     * @SuppressWarnings(PHPMD.UnusedFormalParameter)
      */
     public function where($column, $operator = null, $value = null, $boolean = 'and')
     {
         if (is_array($column) || is_string($column)) {
             $this->customWhere(...func_get_args());
-        } else {
-            parent::where(...func_get_args());
+
+            return $this;
         }
+        parent::where(...func_get_args());
 
         return $this;
     }
@@ -66,31 +68,33 @@ class Builder extends BaseBuilder
      * @param string $boolean
      * @return $this
      * @throws Exception
+     *
+     * @SuppressWarnings(PHPMD.UnusedFormalParameter)
      */
     protected function customWhere($column, $operator = null, $value = null, $boolean = 'and')
     {
-        $relationWhere = [];
         if (is_array($column)) {
-            $this->addArrayWhereAndExtractRelation($relationWhere, $column, $boolean);
-        } else {
-            parent::where(...func_get_args());
+            $relationWhere = $this->addArrayWhereAndExtractRelation($column, $boolean);
+            if (!empty($relationWhere)) {
+                $this->buildRelationsQuery($relationWhere);
+            }
+
+            return $this;
         }
-        if (empty($relationWhere)) {
-            $this->buildRelationsQuery($relationWhere);
-        }
+        parent::where(...func_get_args());
 
         return $this;
     }
 
     /**
-     * @param array $relationWhere
      * @param array $where
      * @param string $boolean
-     * @return void
+     * @return array
      * @throws Exception
      */
-    private function addArrayWhereAndExtractRelation(array &$relationWhere, array $where, $boolean = 'and')
+    private function addArrayWhereAndExtractRelation(array $where, $boolean = 'and')
     {
+        $relationWhere = [];
         foreach ($where as $key => $value) {
             if (is_numeric($key) && is_array($value)) {
                 parent::where(...array_values($value));
@@ -107,6 +111,8 @@ class Builder extends BaseBuilder
             }
             parent::where($key, '=', $value, $boolean);
         }
+
+        return $relationWhere;
     }
 
     /**
@@ -132,15 +138,14 @@ class Builder extends BaseBuilder
 
     /**
      * @param array $array
-     * @param bool $considerZeroEmpty
      * @return array
      */
-    protected function arrayFilterIsEmpty(array $array, $considerZeroEmpty = true)
+    protected function arrayFilterIsEmpty(array $array)
     {
         return array_filter(
             $array,
-            function ($value) use ($considerZeroEmpty) {
-                return !$this->isEmpty($value, $considerZeroEmpty);
+            function ($value) {
+                return !$this->isEmpty($value);
             },
             ARRAY_FILTER_USE_BOTH
         );
@@ -148,29 +153,15 @@ class Builder extends BaseBuilder
 
     /**
      * @param mixed $var
-     * @param bool $considerZeroEmpty
      * @return bool
      */
-    protected function isEmpty($var, $considerZeroEmpty = true)
+    protected function isEmpty($var)
     {
-        if (!isset($var)) {
+        if (!isset($var)
+            || empty($var)
+            || (is_object($var) && ($var instanceof Collection) && count($var) == 0)
+        ) {
             return true;
-        } else {
-            if ($considerZeroEmpty && empty($var)) {
-                return true;
-            } else {
-                if (is_string($var) && trim($var) == '') {
-                    return true;
-                } else {
-                    if (is_array($var) && count($var) == 0) {
-                        return true;
-                    } else {
-                        if (is_object($var) && ($var instanceof Collection) && count($var) == 0) {
-                            return true;
-                        }
-                    }
-                }
-            }
         }
 
         return false;
@@ -200,6 +191,6 @@ class Builder extends BaseBuilder
      */
     protected function getRepository()
     {
-        return $this->repository ?? ($this->repository = RepositoryEloquent::query($this->model));
+        return $this->repository ?? ($this->repository = (new CustomRepositoryEloquent($this->model)));
     }
 }

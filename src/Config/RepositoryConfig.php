@@ -31,7 +31,7 @@ class RepositoryConfig
     /**
      * @var string
      */
-    protected $repositoryDefaultPath;
+    protected $repositoryPath;
     /**
      * @var string
      */
@@ -90,8 +90,8 @@ class RepositoryConfig
     protected function configRepositories(): void
     {
         $repositoryConfig = config('perfectlib.meta.defaults.repositories', []);
-        if (isset($repositoryConfig['default_path']) && !isset($this->repositoryDefaultPath)) {
-            $this->repositoryDefaultPath = $repositoryConfig['default_path'] ?? 'Repositories';
+        if (isset($repositoryConfig['default_path']) && !isset($this->repositoryPath)) {
+            $this->repositoryPath = $repositoryConfig['default_path'] ?? 'Repositories';
         }
         if (isset($repositoryConfig['group_path']) && !isset($this->repositoryGroupPath)) {
             $this->repositoryGroupPath = $repositoryConfig['group_path'] ?? true;
@@ -104,9 +104,9 @@ class RepositoryConfig
     /**
      * @return string
      */
-    public function getRepositoryDefaultPath(): string
+    public function getRepositoryPath(): string
     {
-        return $this->repositoryDefaultPath;
+        return $this->repositoryPath;
     }
 
     /**
